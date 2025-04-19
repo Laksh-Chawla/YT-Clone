@@ -86,7 +86,7 @@ def main():
             r"""
     +----------------------------------------------------------------+
     |    Options:                                                    |
-    |    1. Book a rooms                                             |
+    |    1. Book a room                                              |
     |    2. Search for a room                                        |
     |    3. Check Availability                                       |
     |    4. Checkout                                                 |
@@ -131,7 +131,7 @@ def booking_room():
     name = input("\tEnter your name: ").strip().lower()
     while True:
         try:
-            age = int(input("\tEnter your age: "))
+            age = int(input("\tEnter your age: ").lower().strip())
             break
         except ValueError:
             print("\tPlease enter a valid integer!")
@@ -151,23 +151,24 @@ def booking_room():
             while True:
                 try:
                     duration = int(input("\tEnter the duration of your stay: "))
-                    break
+                    if duration > 0:
+                        break
                 except ValueError:
                     print("\tPlease enter a valid number of days!")
             while True:
                 match room_type:
                     case "s":
-                        room = rd.choice(single)
+                        room = rd.choice(list(single.keys()))
                         if single.get(room) == "available":
                             single[room] = [name, room, duration]
                             break
                     case "d":
-                        room = rd.choice(double)
+                        room = rd.choice(list(double.keys()))
                         if double.get(room) == "available":
                             double[room] = [name, room, duration]
                             break
                     case "S":
-                        room = rd.choice(suite)
+                        room = rd.choice(list(suite.keys()))
                         if suite.get(room) == "available":
                             suite[room] = [name, room, duration]
                             break
@@ -188,15 +189,135 @@ def booking_room():
 
 
 def search():
-    """TODO"""
+    print("\n\t+----------------------------Search------------------------------+")
+    while True:
+        try:
+            bid = (
+                input(
+                    "\nEnter the booking id to find the room you are looking for(Enter 'IDK' if you don't know the BID): "
+                )
+                .lower()
+                .strip()
+            )
+            if bid.isnumeric():
+                if int(bid) in booking_time:
+                    bid = int(bid)
+                    break
+            elif bid == "idk":
+                print("Please return with Booking ID.")
+                return
+            else:
+                print("Please enter a valid Booking ID.")
+        except EOFError:
+            continue
+    name = (
+        input("\nEnter the name of the person under which the room was booked: ")
+        .lower()
+        .strip()
+    )
+    if bid in single and single[bid][0] == name:
+        print(f"The room you're looking for is {bid}.")
+    elif bid in double and double[bid][0] == name:
+        print(f"The room you're looking for is {bid}.")
+    elif bid in suite and suite[bid][0] == name:
+        print(f"The room you're looking for is {bid}.")
+    else:
+        print("Please verify the name under which room was booked!")
+    print("\t+----------------------------------------------------------------+")
 
 
 def check_availability():
-    """TODO"""
+    global available
+    print("\n\t+-------------------------Availability---------------------------+")
+    print("\nAvailable Rooms:- ")
+    print(
+        f"- Single: {available['s']}"
+        f"- Double: {available['d']}"
+        f"- Suite:  {available['S']}"
+    )
+    print("\t+----------------------------------------------------------------+")
 
 
 def checking_out():
-    """TODO"""
+    print("\n\t+--------------------------CheckingOut---------------------------+")
+    while True:
+        try:
+            bid = (
+                input(
+                    "\nEnter the booking id to find the room you are looking for(Enter 'IDK' if you don't know the BID): "
+                )
+                .lower()
+                .strip()
+            )
+            if bid.isnumeric():
+                if int(bid) in booking_time:
+                    bid = int(bid)
+                    break
+            elif bid == "idk":
+                print("Please return with Booking ID.")
+                return
+            else:
+                print("Please enter a valid Booking ID.")
+        except EOFError:
+            continue
+    name = (
+        input("\nEnter the name of the person under which the room was booked: ")
+        .lower()
+        .strip()
+    )
+    while True:
+        room_type = input("Room Type(type 'exit' to escape): ").strip().lower()
+        if room_type in ["single", "suite", "double", "exit"]:
+            match room_type:
+                case "single":
+                    if bid in single:
+                        _name_ = single[bid][0]
+                        price = "s"
+                        break
+                    else:
+                        print("Please enter a room type that matches booking id.")
+                case "double":
+                    if bid in double:
+                        _name_ = double[bid][0]
+                        price = "d"
+                        break
+                    else:
+                        print("Please enter a room type that matches booking id.")
+                case "suite":
+                    if bid in suite:
+                        _name_ = suite[bid][0]
+                        price = "S"
+                        break
+                    else:
+                        print("Please enter a room type that matches booking id.")
+                case "exit":
+                    return
+        else:
+            print("Please enter a valid room type!")
+    if name == _name_:
+        time_spend = dt.datetime.now() - booking_time[bid]
+        print("\n--------------------------------------")
+        print("\t     YOUR BILL")
+        print(f"Room Number: {bid}")
+        print(f"Room Type: {room_type.title()}")
+        print(f"Customer Name: {name}")
+        print(f"Time of Checkout: {dt.datetime.now().strftime('%I:%M %p')}")
+        print(f"Total Time spend: {time_spend}")
+        print(f"Payment: {time_spend.days() * prices[price]}")
+        print(f"\n--------------------------------------")
+        print(f"\nRoom has been checked out.")
+        print(f"THANK YOU FOR STAYING WITH US!")
+    else:
+        print("Name does not match!")
+    available[price] += 1
+    if price == "s":
+        single[bid] = "available"
+    elif price == "d":
+        double[bid] = "available"
+    else:
+        suite[bid] = "available"
+    booking_time[bid] = None
+    print("\t+----------------------------------------------------------------+")
 
 
 print(
