@@ -1,0 +1,210 @@
+/* Main Header Settings */
+.header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 57px;
+    border-bottom: 1px solid rgb(223,222,223);
+    background-color: white;
+}
+
+/* Left Section */
+.left-side-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hamburger-menu {
+    padding-left: 23px;
+    width: 25px;
+    cursor: pointer;
+}
+.youtube-logo {
+    padding-left: 23px;
+    width: 90px;
+    cursor: pointer;
+}
+
+/* Middle Section */
+.middle-header-section {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 470px;
+    margin-left: 60px;
+}
+.search-bar {
+    font-family: Roboto, Arial, sans-serif;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(204,204,204);
+    color: rgb(137,137,136);
+    height: 37px;
+    flex: 1;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 2px;
+}
+.search-icon {
+    background-color: rgb(246,247,246);
+    border: solid;
+    border-color: rgb(204,205,205);
+    border-width: 1px;
+    height: 40px;
+    width: 64px;
+    position: relative;
+    cursor: pointer;
+}
+
+.search-icon-photo {
+    width: 24px;
+    border: none;
+    background-color: rgb(246,247,246);
+}
+.search-icon .tooltip {
+    position: absolute;
+    background-color: rgba(88,89,88,255);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 25px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.search-icon:hover .tooltip {
+    opacity: 0.90;
+}
+.voice-search {
+    margin-left: 8px;
+    background-color: rgb(246,247,246);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.voice-search .tooltip {
+    position: absolute;
+    background-color: rgba(88,89,88,255);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 25px;
+    opacity: 0;
+    margin-left: -45px;
+    transition: opacity 0.15s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.voice-search:hover .tooltip {
+    opacity: 0.90;
+}
+.voice-search-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Right Section */
+.right-side-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 182px;
+    margin-left: 29px;
+    margin-right: 24px;
+}
+.create-icon {
+    height: 24px;
+    cursor: pointer;
+}
+.create-icon-div {
+    position: relative;
+}
+.create-icon-div .tooltip {
+    position: absolute;
+    background-color: rgba(88,89,88,255);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 18px;
+    opacity: 0;
+    margin-left: -15px;
+    transition: opacity 0.15s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.create-icon-div:hover .tooltip {
+    opacity: 0.90;
+}
+.apps {
+    height: 24px;
+    cursor: pointer;
+}
+.apps-div {
+    position: relative;
+}
+.apps-div .tooltip {
+    position: absolute;
+    background-color: rgba(88,89,88,255);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 18px;
+    margin-left: -28px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    border-radius: 2px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+.apps-div:hover .tooltip {
+    opacity: 0.90;
+}
+.notifications {
+    height: 24px;
+    cursor: pointer;
+}
+.notifications-div {
+    position: relative;
+}
+.notifications-div .number-of-notifications {
+    background-color: rgb(205,0,1);
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    border: none;
+    border-radius: 45%;
+    padding: 1px 4.5px;
+    top: -1px;
+    right: -2.5px;
+}
+.notifications-div .tooltip {
+    position: absolute;
+    background-color: rgba(88,89,88,255);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 18px;
+    opacity: 0;
+    margin-left: -29px;
+    transition: opacity 0.15s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.notifications-div:hover .tooltip {
+    opacity: 0.90;
+}
+.account-logo {
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
