@@ -1,31 +1,154 @@
-# CODE
+# YouTube Clone
 
-## Projects
+A pixel-perfect recreation of the YouTube homepage built with pure HTML and CSS. This project demonstrates modern web development techniques including responsive design, CSS Grid, Flexbox, and component-based styling.
 
-### 1. Hotel Management Project
+## 🚀 Features
 
-<details>
-  <summary>Click to reveal details about the Hotel Management Project</summary>
-  
-  I started this project as a school submission, but as I got into it, I found it increasingly challenging, and I enjoyed that. It pushed me to my limits, and after that experience, I never felt quite as pushed again. While it's still not perfect, I plan to perfect it someday. As of April 19, 2025, there are three versions of the project, two of which are completed and uploaded. I plan to release the final version after some time. The reason for the existence of a third version is simple: the first version was for personal practice, the second was to showcase some of my skills (and was made before the first one), and the third version will be the most recent, albeit the most bare-bones, as the school only allows basic Python. After all, it's important for practical marks, so I will purposely keep the third version simple. I plan to complete this final version during the summer break of 12th grade (June 2025).
-  
-</details>
+- **Authentic YouTube Design**: Pixel-perfect recreation of YouTube's homepage layout
+- **Fixed Header Navigation**: Functional search bar, logo, and navigation buttons
+- **Responsive Sidebar**: Navigation menu with YouTube's standard categories
+- **Video Grid Layout**: Dynamic grid displaying video thumbnails, titles, and metadata
+- **Channel Integration**: Links to actual YouTube channels and videos
+- **Modern CSS**: Uses CSS Grid, Flexbox, and modern styling techniques
+- **Google Fonts**: Implements Roboto font family for authentic look
 
-### 2. YouTube Clone - 2022/2023
+## 🎯 Components
 
-<details>
-  <summary>Click to reveal details about the YouTube Clone Project</summary>
+### Header
 
-  This is a simple YouTube clone I created as the final project for a YouTube course focused solely on HTML and CSS. While the course taught a lot, it didn't cover everything (which is expected from a 7-hour course). Still, for what it was, it was a good learning experience. I plan to work on an updated version of this project after learning JavaScript.
+- YouTube logo and branding
+- Search functionality with voice search icon
+- User account and notification icons
+- Fixed positioning for persistent navigation
 
-  Course Link: [HTML & CSS Full Course - Beginner to Pro](https://www.youtube.com/watch?v=G3e-cpL7ofc&t=21787s)
+### Sidebar
 
-</details>
+- Navigation menu with icons
+- Categories: Home, Explore, Subscriptions, Originals, YouTube Music, Library
+- Fixed positioning for easy access
 
-## About [CODE](#code)
+### Video Grid
 
-All the projects I am keeping here are meant to remind me of my beginnings as a developer.
+- Responsive grid layout for video cards
+- Video thumbnails with hover effects
+- Channel profile pictures
+- Video metadata (title, channel name, views, upload date)
+- Direct links to actual YouTube content
 
-## About Me
+## 🛠️ Technology Stack
 
-> Just a developer.
+- **HTML5**: Semantic markup and structure
+- **CSS3**: Modern styling with Grid and Flexbox
+- **Google Fonts**: Roboto font family
+- **SVG Icons**: Scalable vector graphics for crisp icons
+
+## 📁 Project Structure
+
+```text
+youtube_project/
+├── html/
+│   └── main.html          # Main HTML file
+├── styles/
+│   ├── general.css        # Global styles and resets
+│   ├── header.css         # Header component styles
+│   ├── sidebar.css        # Sidebar navigation styles
+│   └── video-grid.css     # Video grid layout styles
+├── Icons/                 # SVG icons for UI elements
+├── thumbnails/            # Video thumbnail images
+└── Channel Icons/         # Channel profile pictures
+```
+
+## 🎨 Styling Architecture
+
+The project uses a modular CSS approach with separate stylesheets for different components:
+
+- **general.css**: Base styles, typography, and global resets
+- **header.css**: Header layout, search bar, and navigation
+- **sidebar.css**: Fixed sidebar navigation and menu items
+- **video-grid.css**: Video card layout and responsive grid
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/youtube-clone.git
+   cd youtube-clone
+   ```
+
+2. **Open the project**
+
+   ```bash
+   # Navigate to the HTML file
+   cd youtube_project/html
+
+   # Open in your preferred browser
+   open main.html
+   # or double-click main.html in file explorer
+   ```
+
+3. **View in browser**
+   - Open `youtube_project/html/main.html` in any modern web browser
+   - No build process or server required!
+
+## 📱 Browser Compatibility
+
+- ✅ Chrome (recommended)
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+- ✅ Modern mobile browsers
+
+## 🎯 Key Learning Outcomes
+
+This project demonstrates:
+
+- **CSS Grid & Flexbox**: Modern layout techniques
+- **Component Architecture**: Modular CSS organization
+- **Fixed Positioning**: Creating persistent UI elements
+- **Responsive Design**: Adapting to different screen sizes
+- **Typography**: Web font integration and text styling
+- **Icon Integration**: SVG usage and styling
+- **Hover Effects**: Interactive UI elements
+
+## 🔧 Customization
+
+### Adding New Videos
+
+1. Add thumbnail images to `thumbnails/` folder
+2. Add channel icons to `Channel Icons/` folder
+3. Update `main.html` with new video data
+4. Follow the existing HTML structure for consistency
+
+### Styling Changes
+
+- Modify individual CSS files for specific components
+- Update `general.css` for global changes
+- Use browser dev tools to test changes in real-time
+
+## 📸 Screenshots
+
+![YouTube Clone Homepage](screenshot.png)
+_Pixel-perfect recreation of YouTube's homepage_
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- YouTube for the original design inspiration
+- Google Fonts for the Roboto font family
+- The web development community for best practices and techniques
+
+---
+
+**Note**: This is a learning project and is not affiliated with YouTube or Google. All YouTube content, logos, and trademarks belong to their respective owners.
